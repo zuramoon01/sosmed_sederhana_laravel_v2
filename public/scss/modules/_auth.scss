@@ -9,13 +9,14 @@
         width: 100%;
         max-width: 480px;
         padding: 36px 24px;
+        margin-top: 12px;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
-        border: 1px solid rgba($primary-color, 0.4);
+        border: 1px solid rgba(#000, 0.1);
         border-radius: 8px;
-        background-color: $primary-color-25;
+        background-color: #fff;
 
         h1 {
             margin: 0;
@@ -32,54 +33,47 @@
         }
 
         &-label {
-            color: $primary-color-65;
+            color: rgba(#000, 0.8);
             font-weight: 600;
         }
 
         &-input {
             width: inherit;
-            background-color: transparent;
-            color: $primary-color;
+            background-color: #fff;
             font-weight: 300;
             padding: 12px 0px;
             outline: none;
             border: none;
-            border-bottom: 1px solid $primary-color-55;
+            border-bottom: 1px solid rgba(#000, 0.4);
+            transition: all 0.2s ease-in-out;
         }
 
         &-input:focus,
         &-input:hover {
-            border-bottom: 1px solid $primary-color;
-        }
-
-        &-input::placeholder {
-            color: $primary-color-65;
+            border-bottom: 1px solid #000;
         }
 
         &-button {
             width: inherit;
-            background-color: $primary-color;
-            color: $primary-color-25;
+            background-color: #fff;
             border: none;
             border-radius: 4px;
+            border: 1px solid rgba(#000, 0.1);
             margin-top: 12px;
             margin-bottom: 36px;
             padding: 16px;
             font-size: 1.25rem;
             font-weight: 700;
             cursor: pointer;
+            transition: all 0.2s ease-in-out;
         }
 
         &-button:hover {
-            background-color: $primary-color-65;
+            background-color: rgba(#000, 0.1);
         }
 
-        a {
-            color: $primary-color;
-        }
-
-        a:hover {
-            color: $primary-color-65;
+        a:visited {
+            color: blue;
         }
     }
 }
