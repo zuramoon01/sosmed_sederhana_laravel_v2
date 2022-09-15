@@ -1,7 +1,9 @@
 <?php
 
-use App\Http\Controllers\AuthController;
+use App\Models\Post;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'index')->name('home');
+Route::view('/', 'index', ['posts' => Post::all()])->middleware('auth')->name('home');
 
 Route::controller(AuthController::class)->group(function () {
     Route::middleware('guest')->group(function () {
@@ -24,4 +26,11 @@ Route::controller(AuthController::class)->group(function () {
         Route::post('/login', 'verify');
     });
     Route::get('/logout', 'logout')->middleware('auth')->name('logout');
+});
+
+Route::middleware(['auth'])->group(function () {
+    Route::controller(PostController::class)
+        ->prefix('/posts')->group(function () {
+            Route::post('/', 'create');
+        });
 });
