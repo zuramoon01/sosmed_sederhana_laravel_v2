@@ -26,8 +26,6 @@ html {
 body {
   font-family: "Poppins", sans-serif;
   margin: 0;
-  background-color: #0a1326;
-  color: #366cd8;
 }
 
 /**
@@ -330,13 +328,14 @@ template {
   width: 100%;
   max-width: 480px;
   padding: 36px 24px;
+  margin-top: 12px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  border: 1px solid rgba(54, 108, 216, 0.4);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 8px;
-  background-color: #102040;
+  background-color: #fff;
 }
 .auth-form h1 {
   margin: 0;
@@ -351,50 +350,191 @@ template {
   margin-bottom: 24px;
 }
 .auth-form-label {
-  color: #2953a6;
+  color: rgba(0, 0, 0, 0.8);
   font-weight: 600;
 }
 .auth-form-input {
   width: inherit;
-  background-color: transparent;
-  color: #366cd8;
+  background-color: #fff;
   font-weight: 300;
   padding: 12px 0px;
   outline: none;
   border: none;
-  border-bottom: 1px solid #23468c;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  transition: all 0.2s ease-in-out;
 }
 .auth-form-input:focus, .auth-form-input:hover {
-  border-bottom: 1px solid #366cd8;
-}
-.auth-form-input::-moz-placeholder {
-  color: #2953a6;
-}
-.auth-form-input:-ms-input-placeholder {
-  color: #2953a6;
-}
-.auth-form-input::placeholder {
-  color: #2953a6;
+  border-bottom: 1px solid #000;
 }
 .auth-form-button {
   width: inherit;
-  background-color: #366cd8;
-  color: #102040;
+  background-color: #fff;
   border: none;
   border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   margin-top: 12px;
   margin-bottom: 36px;
   padding: 16px;
   font-size: 1.25rem;
   font-weight: 700;
   cursor: pointer;
+  transition: all 0.2s ease-in-out;
 }
 .auth-form-button:hover {
-  background-color: #2953a6;
+  background-color: rgba(0, 0, 0, 0.1);
 }
-.auth-form a {
-  color: #366cd8;
+.auth-form a:visited {
+  color: blue;
 }
-.auth-form a:hover {
-  color: #2953a6;
+
+main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 720px;
+  padding: 24px 36px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+main .container-post {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  row-gap: 24px;
+}
+main .container-comment {
+  width: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  row-gap: 16px;
+  margin-top: 16px;
+  margin-left: 16px;
+  padding: 16px;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+}
+main .header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 24px;
+}
+main .header .title {
+  font-size: 2rem;
+  font-weight: 800;
+}
+main .header .user {
+  font-weight: 600;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+main .header .logout {
+  background-color: #fff;
+  color: #000;
+  padding: 6px 12px;
+  margin-left: 16px;
+  text-decoration: none;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  transition: all 0.1s ease-in-out;
+}
+main .header .logout:hover {
+  border: 1px solid rgba(0, 0, 0, 0.4);
+}
+main .create-post-icon {
+  width: 16px;
+}
+main .create-post-text {
+  margin-left: 4px;
+}
+main .create-post-button {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #fff;
+  padding: 4px 8px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+}
+main .create-post-button:hover {
+  border: 1px solid rgba(0, 0, 0, 0.4);
+}
+main .create-post-form,
+main .create-comment-form {
+  width: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+main .create-comment-form {
+  margin-top: 16px;
+  margin-left: 16px;
+  padding-right: 16px;
+}
+main .textarea {
+  width: inherit;
+  background-color: #fff;
+  font-weight: 300;
+  padding: 12px;
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 4px;
+}
+main .textarea:focus {
+  border: 1px solid #000;
+}
+main .submit {
+  background-color: #fff;
+  margin-top: 12px;
+  padding: 4px 8px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+}
+main .submit:hover {
+  border: 1px solid rgba(0, 0, 0, 0.4);
+}
+main .single-post,
+main .single-comment {
+  width: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+main .author {
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+}
+main .content {
+  margin: 4px 0px 12px;
+  letter-spacing: 0.4px;
+}
+main .date {
+  color: rgba(0, 0, 0, 0.4);
+  letter-spacing: 0.2px;
+}
+main .comment {
+  color: rgba(0, 0, 0, 0.8);
+}
+main .comment:hover {
+  color: #000;
 }/*# sourceMappingURL=style.css.map */
