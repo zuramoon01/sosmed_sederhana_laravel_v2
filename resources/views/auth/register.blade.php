@@ -11,7 +11,7 @@
 
 <body>
     <section class="auth">
-        <form action="/login" class="auth-form" method="post">
+        <form action="/register" class="auth-form" method="post">
             <h1>Daftar</h1>
 
             @csrf
