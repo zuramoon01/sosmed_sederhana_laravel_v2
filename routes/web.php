@@ -14,5 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return to_route('login');
+})->middleware('auth');
+
+Route::get('/login', function () {
+    return view('auth.login');
+})->middleware('guest')->name('login');
+
+Route::get('/register', function () {
+    return view('auth.register');
+})->middleware('guest')->name('register');
