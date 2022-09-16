@@ -412,6 +412,34 @@ main .container-post {
   align-items: flex-start;
   row-gap: 24px;
 }
+main .container-single-post {
+  width: inherit;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+main .container-single-post > .content {
+  width: inherit;
+}
+main .container-single-post .action {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  -moz-column-gap: 14px;
+       column-gap: 14px;
+}
+main .container-single-post .action .icon-edit,
+main .container-single-post .action .icon-delete {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+main .container-single-post .action .icon-edit:hover {
+  color: rgba(255, 255, 0, 0.8);
+}
+main .container-single-post .action .icon-delete:hover {
+  color: rgba(255, 0, 0, 0.8);
+}
 main .container-comment {
   width: inherit;
   display: none;
@@ -455,7 +483,7 @@ main .header .logout:hover {
   border: 1px solid rgba(0, 0, 0, 0.4);
 }
 main .create-post-icon {
-  width: 16px;
+  font-size: 16px;
 }
 main .create-post-text {
   margin-left: 4px;
@@ -474,6 +502,7 @@ main .create-post-button {
 main .create-post-button:hover {
   border: 1px solid rgba(0, 0, 0, 0.4);
 }
+main .post-form,
 main .create-post-form,
 main .create-comment-form {
   width: inherit;
@@ -482,6 +511,9 @@ main .create-comment-form {
   align-items: flex-end;
   justify-content: center;
   transition: all 0.1s ease-in-out;
+}
+main .post-form {
+  display: flex;
 }
 main .create-comment-form {
   margin-top: 16px;
@@ -527,7 +559,7 @@ main .author {
   font-weight: 800;
   letter-spacing: 0.8px;
 }
-main .content {
+main > .content {
   margin: 4px 0px 12px;
   letter-spacing: 0.4px;
 }

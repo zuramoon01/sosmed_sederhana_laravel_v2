@@ -24,6 +24,40 @@ main {
             row-gap: 24px;
         }
 
+        &-single-post{
+            width: inherit;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+
+            > .content{
+                width: inherit;
+            }
+            
+    
+            .action{
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-end;
+                column-gap: 14px;
+
+                .icon-edit,
+                .icon-delete{
+                    font-size: 14px;
+                    color: rgba(#000, 0.4);
+                    cursor: pointer;
+                }
+
+                .icon-edit:hover{
+                    color: rgba(yellow, 0.8);
+                }
+
+                .icon-delete:hover{
+                    color: rgba(red, 0.8);
+                }
+            }
+        }
+
         &-comment {
             width: inherit;
             display: none;
@@ -75,7 +109,7 @@ main {
 
     .create-post {
         &-icon {
-            width: 16px;
+            font-size: 16px;
         }
 
         &-text {
@@ -99,6 +133,7 @@ main {
         }
     }
 
+    .post-form,
     .create-post-form,
     .create-comment-form {
         width: inherit;
@@ -107,6 +142,10 @@ main {
         align-items: flex-end;
         justify-content: center;
         transition: all 0.1s ease-in-out;
+    }
+
+    .post-form{
+        display: flex;
     }
 
     .create-comment {
@@ -162,7 +201,7 @@ main {
         letter-spacing: 0.8px;
     }
 
-    .content {
+    > .content {
         margin: 4px 0px 12px;
         letter-spacing: 0.4px;
     }
@@ -179,4 +218,5 @@ main {
     .comment:hover {
         color: #000;
     }
+
 }
