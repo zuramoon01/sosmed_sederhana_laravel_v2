@@ -15,6 +15,12 @@ class PostController extends Controller
             'post' => $request->post
         ]);
 
-        return response()->json($post);
+        $data = [
+            'username' => strtoupper($post->user->name),
+            'post' => $post->post,
+            'date' => $post->created_at->format('F d, Y h:i'),
+        ];
+
+        return response()->json($data);
     }
 }
