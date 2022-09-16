@@ -17,10 +17,18 @@ class PostController extends Controller
 
         $data = [
             'username' => strtoupper($post->user->name),
+            'id' => $post->id,
             'post' => $post->post,
             'date' => $post->created_at->format('F d, Y h:i'),
         ];
 
         return response()->json($data);
+    }
+
+    public function destroy(Post $post)
+    {
+        Post::destroy($post->id);
+
+        return response()->json('success');
     }
 }
