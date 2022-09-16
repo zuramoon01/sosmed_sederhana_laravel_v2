@@ -32,5 +32,6 @@ Route::middleware(['auth'])->group(function () {
     Route::controller(PostController::class)
         ->prefix('/posts')->group(function () {
             Route::post('/', 'create');
+            Route::delete('/{post:id}', 'destroy');
         });
 });

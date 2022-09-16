@@ -5,9 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Sosmed | Home</title>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -24,36 +27,43 @@
 
             <div class="container-post">
                 <div class="create-post-button">
-                    <img src="{{ asset('icons/plus-solid.svg') }}" alt="Ikon Tambah" class="create-post-icon">
+                    <i class="fa-solid fa-plus create-post-icon"></i>
                     <p class="create-post-text">Buat Pos</p>
                 </div>
 
                 <form action="/posts" class="create-post-form" method="post">
-                    @csrf
-
                     <textarea name="post" id="post" cols="50" rows="5" class="textarea"></textarea>
 
                     <button class="submit">Buat Pos</button>
                 </form>
 
                 @foreach ($posts as $post)
-                    <article class="single-post">
-                        <h3 class="author">{{ strtoupper($post->user->name) }}</h3>
+                    <article class="single-post" data-id={{ $post->id }}>
+                        <div class="container-single-post">
+                            <div class="content">
+                                <h3 class="author">{{ strtoupper($post->user->name) }}</h3>
 
-                        <p class="content">{{ $post->post }}</p>
+                                <p class="content">{{ $post->post }}</p>
 
-                        <p class="date">{{ strtoupper($post->created_at->format('F d, Y h:i')) }}
-                            WIB |
-                            <a href="#" class="comment" onclick="displayCommentForm(this)">Komen</a>
-                        </p>
+                                <p class="date">{{ strtoupper($post->created_at->format('F d, Y h:i')) }}
+                                    WIB |
+                                    <a href="#" class="comment" onclick="displayCommentForm(this)">Komen</a>
+                                </p>
+                            </div>
 
-                        <form action="#" class="create-comment-form">
-                            <textarea name="comment" id="comment" cols="50" rows="3" class="textarea"></textarea>
-
-                            <button class="submit">Buat Komen</button>
-                        </form>
+                            <div class="action">
+                                <i class="fa-solid fa-marker icon-edit" onclick="displayEditPostForm(this)"></i>
+                                <i class="fa-solid fa-trash icon-delete" onclick="deletePost(this)"></i>
+                            </div>
+                        </div>
 
                         <div class="container-comment">
+                            <form action="#" class="create-comment-form">
+                                <textarea name="comment" id="comment" cols="50" rows="3" class="textarea"></textarea>
+
+                                <button class="submit">Buat Komen</button>
+                            </form>
+
                             <article class="single-comment">
                                 <h3 class="author">{{ strtoupper('Zura') }}</h3>
 
