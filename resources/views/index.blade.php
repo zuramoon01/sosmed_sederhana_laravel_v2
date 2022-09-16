@@ -42,9 +42,9 @@
 
                         <p class="content">{{ $post->post }}</p>
 
-                        <p class="date">{{ strtoupper($post->created_at->format('F d, Y G:i')) }}
+                        <p class="date">{{ strtoupper($post->created_at->format('F d, Y h:i')) }}
                             WIB |
-                            <a href="#" class="comment">Komen</a>
+                            <a href="#" class="comment" onclick="displayCommentForm(this)">Komen</a>
                         </p>
 
                         <form action="#" class="create-comment-form">
@@ -73,7 +73,7 @@
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script type="module" src="{{ asset('js/index.js') }}"></script>
+    <script src="{{ asset('js/index.js') }}"></script>
 </body>
 
 </html>
